@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ UTP Gateway Dashboard | Merchant Portal</title>
+    <meta name="description" content="UTP Gateway merchant dashboard for managing payments, settlements, and analytics">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                    <i class="fas fa-coins"></i>
+                    <span>UTP Dashboard</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Overview</div>
+                    <a href="#overview" class="nav-item active" data-section="overview">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#analytics" class="nav-item" data-section="analytics">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Payments</div>
+                    <a href="#payments" class="nav-item" data-section="payments">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="#settlements" class="nav-item" data-section="settlements">
+                        <i class="fas fa-university"></i>
+                        <span>Settlements</span>
+                    </a>
+                    <a href="#refunds" class="nav-item" data-section="refunds">
+                        <i class="fas fa-undo"></i>
+                        <span>Refunds</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Settings</div>
+                    <a href="#profile" class="nav-item" data-section="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                    <a href="#api" class="nav-item" data-section="api">
+                        <i class="fas fa-key"></i>
+                        <span>API Keys</span>
+                    </a>
+                    <a href="#webhooks" class="nav-item" data-section="webhooks">
+                        <i class="fas fa-webhook"></i>
+                        <span>Webhooks</span>
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="merchant-info">
+                    <div class="merchant-avatar">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="merchant-details">
+                        <div class="merchant-name">TechCorp Solutions</div>
+                        <div class="merchant-status">
+                            <span class="status-dot active"></span>
+                            Active
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 class="page-title">Dashboard</h1>
+                    <div class="page-breadcrumb">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <button class="btn btn-outline" onclick="exportData()">
+                        <i class="fas fa-download"></i>
+                        Export
+                    </button>
+                    <button class="btn btn-primary" onclick="showQuickPayment()">
+                        <i class="fas fa-plus"></i>
+                        Quick Payment
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Overview Section -->
+                <section id="overview" class="content-section active">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <div class="metric-title">Today's Revenue</div>
+                                <div class="metric-icon revenue">
+                                    <i class="fas fa-rupee-sign"></i>
+                                </div>
+                            </div>
+                            <div class="metric-value">₹2,45,670</div>
+                            <div class="metric-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+12.5% from yesterday</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <div class="metric-title">Transactions</div>
+                                <div class="metric-icon transactions">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                            </div>
+                            <div class="metric-value">1,247</div>
+                            <div class="metric-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+8.3% from yesterday</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <div class="metric-title">Average Order Value</div>
+                                <div class="metric-icon aov">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                            </div>
+                            <div class="metric-value">₹197</div>
+                            <div class="metric-change neutral">
+                                <i class="fas fa-minus"></i>
+                                <span>Same as yesterday</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <div class="metric-title">Success Rate</div>
+                                <div class="metric-icon success">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="metric-value">99.7%</div>
+                            <div class="metric-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+0.2% from yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-charts">
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>Revenue Trend (Last 30 Days)</h3>
+                                <div class="chart-controls">
+                                    <button class="chart-btn active" data-period="7d">7D</button>
+                                    <button class="chart-btn" data-period="30d">30D</button>
+                                    <button class="chart-btn" data-period="90d">90D</button>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder" id="revenueChart">
+                                <div class="chart-bars">
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 80%"></div>
+                                    <div class="bar" style="height: 45%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                    <div class="bar" style="height: 70%"></div>
+                                    <div class="bar" style="height: 85%"></div>
+                                    <div class="bar" style="height: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>Token Distribution</h3>
+                            </div>
+                            <div class="token-distribution">
+                                <div class="token-bar gold">
+                                    <div class="token-label">
+                                        <i class="fas fa-coins"></i>
+                                        <span>Gold (BGT)</span>
+                                    </div>
+                                    <div class="token-bar-fill" style="width: 45%">45%</div>
+                                </div>
+                                <div class="token-bar binr">
+                                    <div class="token-label">
+                                        <i class="fas fa-rupee-sign"></i>
+                                        <span>BINR</span>
+                                    </div>
+                                    <div class="token-bar-fill" style="width: 30%">30%</div>
+                                </div>
+                                <div class="token-bar silver">
+                                    <div class="token-label">
+                                        <i class="fas fa-coins"></i>
+                                        <span>Silver (BST)</span>
+                                    </div>
+                                    <div class="token-bar-fill" style="width: 15%">15%</div>
+                                </div>
+                                <div class="token-bar platinum">
+                                    <div class="token-label">
+                                        <i class="fas fa-coins"></i>
+                                        <span>Platinum (BPT)</span>
+                                    </div>
+                                    <div class="token-bar-fill" style="width: 10%">10%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <div class="section-header">
+                            <h3>Recent Transactions</h3>
+                            <a href="#payments" class="view-all">View All</a>
+                        </div>
+                        <div class="transaction-list">
+                            <div class="transaction-item">
+                                <div class="transaction-icon gold">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <div class="transaction-info">
+                                    <div class="transaction-title">BGT Payment</div>
+                                    <div class="transaction-subtitle">Order #12345 • Customer: Rahul S.</div>
+                                </div>
+                                <div class="transaction-amount">
+                                    <div class="amount">+₹1,500</div>
+                                    <div class="token-amount">0.265g BGT</div>
+                                </div>
+                                <div class="transaction-status completed">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon binr">
+                                    <i class="fas fa-rupee-sign"></i>
+                                </div>
+                                <div class="transaction-info">
+                                    <div class="transaction-title">BINR Payment</div>
+                                    <div class="transaction-subtitle">Order #12346 • Customer: Priya M.</div>
+                                </div>
+                                <div class="transaction-amount">
+                                    <div class="amount">+₹800</div>
+                                    <div class="token-amount">800 BINR</div>
+                                </div>
+                                <div class="transaction-status completed">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon silver">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <div class="transaction-info">
+                                    <div class="transaction-title">BST Payment</div>
+                                    <div class="transaction-subtitle">Order #12347 • Customer: Amit K.</div>
+                                </div>
+                                <div class="transaction-amount">
+                                    <div class="amount">+₹2,100</div>
+                                    <div class="token-amount">28.97g BST</div>
+                                </div>
+                                <div class="transaction-status pending">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Other sections will be similar but hidden initially -->
+                <section id="payments" class="content-section">
+                    <div class="section-header">
+                        <h2>Transaction History</h2>
+                        <p>View and manage all your payment transactions</p>
+                    </div>
+                    <!-- Payments table will go here -->
+                </section>
+                
+                <section id="analytics" class="content-section">
+                    <div class="section-header">
+                        <h2>Analytics</h2>
+                        <p>Detailed insights into your payment performance</p>
+                    </div>
+                    <!-- Analytics content will go here -->
+                </section>
+                
+                <section id="settlements" class="content-section">
+                    <div class="section-header">
+                        <h2>Settlements</h2>
+                        <p>Track your settlement history and preferences</p>
+                    </div>
+                    <!-- Settlements content will go here -->
+                </section>
+                
+                <section id="profile" class="content-section">
+                    <div class="section-header">
+                        <h2>Profile Settings</h2>
+                        <p>Manage your merchant profile and preferences</p>
+                    </div>
+                    <!-- Profile content will go here -->
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Quick Payment Modal -->
+    <div id="quickPaymentModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create Payment Link</h3>
+                <button class="modal-close" onclick="closeQuickPayment()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="quick-payment-form">
+                    <div class="form-group">
+                        <label>Amount (INR)</label>
+                        <input type="number" id="qpAmount" placeholder="Enter amount" min="10">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" id="qpDescription" placeholder="What is this payment for?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Acceptable Tokens</label>
+                        <div class="token-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="bgt" checked>
+                                <span class="checkbox-custom"></span>
+                                <i class="fas fa-coins gold"></i>
+                                Gold (BGT)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="binr" checked>
+                                <span class="checkbox-custom"></span>
+                                <i class="fas fa-rupee-sign"></i>
+                                BINR
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="bst">
+                                <span class="checkbox-custom"></span>
+                                <i class="fas fa-coins silver"></i>
+                                Silver (BST)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="closeQuickPayment()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Payment Link</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

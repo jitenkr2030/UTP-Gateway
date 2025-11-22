@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 UTP Gateway - Unified Token Payments | India's First Metal-Backed Payment System</title>
+    <meta name="description" content="Revolutionary payment gateway accepting Gold, Silver, Platinum tokens and BINR stablecoin. Instant INR settlements for merchants. The future of UPI 3.0.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-coins brand-icon"></i>
+                <span class="brand-text">UTP Gateway</span>
+                <span class="brand-subtitle">Unified Token Payments</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#tokens" class="nav-link">Supported Tokens</a>
+                <a href="#merchants" class="nav-link">For Merchants</a>
+                <a href="#developers" class="nav-link">Developers</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn btn-outline" onclick="window.location.href='dashboard.html'">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </button>
+                <button class="btn btn-primary" onclick="window.location.href='#get-started'">
+                    <i class="fas fa-rocket"></i>
+                    Get Started
+                </button>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>India's #1 Metal-Backed Payment Gateway</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    The Future of Payments is
+                    <span class="gradient-text">Asset-Backed</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Accept payments in <strong>Gold</strong>, <strong>Silver</strong>, <strong>Platinum</strong> tokens, and <strong>BINR stablecoin</strong>. 
+                    Settle instantly in INR, BINR, or physical assets. Experience UPI 3.0 today.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Active Merchants</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">₹125Cr+</div>
+                        <div class="stat-label">Monthly Volume</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">&lt;2s</div>
+                        <div class="stat-label">Settlement Time</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99.99%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" onclick="startPaymentDemo()">
+                        <i class="fas fa-play"></i>
+                        Try Payment Demo
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="openDocumentation()">
+                        <i class="fas fa-book"></i>
+                        View Documentation
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="payment-demo">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <div class="demo-title">Customer Payment</div>
+                            <div class="demo-amount">₹1,000</div>
+                        </div>
+                        
+                        <div class="token-selection">
+                            <div class="token-option active" data-token="bgt">
+                                <i class="fas fa-coins token-icon gold"></i>
+                                <span>Gold (BGT)</span>
+                                <div class="token-price">1.77g</div>
+                            </div>
+                            <div class="token-option" data-token="binr">
+                                <i class="fas fa-rupee-sign token-icon"></i>
+                                <span>BINR Stablecoin</span>
+                                <div class="token-price">1,000 BINR</div>
+                            </div>
+                            <div class="token-option" data-token="bst">
+                                <i class="fas fa-coins token-icon silver"></i>
+                                <span>Silver (BST)</span>
+                                <div class="token-price">13.79g</div>
+                            </div>
+                        </div>
+                        
+                        <div class="settlement-options">
+                            <div class="settlement-title">Merchant Settlement</div>
+                            <div class="settlement-option active">
+                                <i class="fas fa-university settlement-icon"></i>
+                                <span>Instant INR</span>
+                                <div class="settlement-time">&lt; 2s</div>
+                            </div>
+                        </div>
+                        
+                        <div class="demo-actions">
+                            <button class="btn btn-primary demo-pay-btn">
+                                <i class="fas fa-check"></i>
+                                Pay with Gold
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="conversion-flow">
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="step-label">Customer</div>
+                        </div>
+                        
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-icon utp-gateway">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="step-label">UTP Gateway</div>
+                        </div>
+                        
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="step-label">Merchant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose UTP Gateway?</h2>
+                <p class="section-subtitle">
+                    Experience the next evolution of digital payments with asset-backed transactions
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="feature-title">Multi-Asset Payments</h3>
+                    <p class="feature-description">
+                        Accept payments in Gold, Silver, Platinum tokens, BINR stablecoin, and any RWA-backed token. 
+                        Give customers choice while maintaining security.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Instant Settlements</h3>
+                    <p class="feature-description">
+                        Sub-2 second settlements via UPI, instant BINR transfers, or real-time asset token settlements. 
+                        Never wait for money again.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Enterprise Security</h3>
+                    <p class="feature-description">
+                        Multi-signature validation, hardware security modules, and physical asset backing. 
+                        Bank-grade security for all transactions.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3 class="feature-title">Lowest Fees</h3>
+                    <p class="feature-description">
+                        0.1-0.3% transaction fees, zero hidden charges, and transparent pricing. 
+                        Save more money while processing payments.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Asset Appreciation</h3>
+                    <p class="feature-description">
+                        Customers pay with assets that appreciate over time. Merchants can choose asset settlement 
+                        for portfolio diversification.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title">Cross-Chain Ready</h3>
+                    <p class="feature-description">
+                        Built on Hyperledger Fabric with Ethereum, Polygon, and BSC compatibility. 
+                        Future-proof your payment infrastructure.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Tokens Section -->
+    <section id="tokens" class="tokens">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Supported Payment Tokens</h2>
+                <p class="section-subtitle">
+                    Pay with any of these physical asset-backed digital tokens
+                </p>
+            </div>
+            
+            <div class="tokens-grid">
+                <div class="token-card gold">
+                    <div class="token-header">
+                        <div class="token-logo">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="token-info">
+                            <h3 class="token-name">Bharat Gold Token</h3>
+                            <span class="token-symbol">BGT</span>
+                        </div>
+                        <div class="token-price">₹5,650/g</div>
+                    </div>
+                    <div class="token-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Backing:</span>
+                            <span class="detail-value">24K Physical Gold</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Purity:</span>
+                            <span class="detail-value">99.99%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Storage:</span>
+                            <span class="detail-value">LBMA Certified</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Insurance:</span>
+                            <span class="detail-value">100% Covered</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="token-card silver">
+                    <div class="token-header">
+                        <div class="token-logo">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="token-info">
+                            <h3 class="token-name">Bharat Silver Token</h3>
+                            <span class="token-symbol">BST</span>
+                        </div>
+                        <div class="token-price">₹72.50/g</div>
+                    </div>
+                    <div class="token-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Backing:</span>
+                            <span class="detail-value">Physical Silver</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Standard:</span>
+                            <span class="detail-value">LBMA Good Delivery</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Storage:</span>
+                            <span class="detail-value">LME Approved</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Insurance:</span>
+                            <span class="detail-value">100% Covered</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="token-card platinum">
+                    <div class="token-header">
+                        <div class="token-logo">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="token-info">
+                            <h3 class="token-name">Bharat Platinum Token</h3>
+                            <span class="token-symbol">BPT</span>
+                        </div>
+                        <div class="token-price">₹3,200/g</div>
+                    </div>
+                    <div class="token-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Backing:</span>
+                            <span class="detail-value">Physical Platinum</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Standard:</span>
+                            <span class="detail-value">LPMM Compliant</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Storage:</span>
+                            <span class="detail-value">PGM Certified</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Insurance:</span>
+                            <span class="detail-value">100% Covered</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="token-card stablecoin">
+                    <div class="token-header">
+                        <div class="token-logo">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="token-info">
+                            <h3 class="token-name">BINR Stablecoin</h3>
+                            <span class="token-symbol">BINR</span>
+                        </div>
+                        <div class="token-price">₹1.00</div>
+                    </div>
+                    <div class="token-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Backing:</span>
+                            <span class="detail-value">1:1 INR Reserve</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Regulation:</span>
+                            <span class="detail-value">RBI Compliant</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Audits:</span>
+                            <span class="detail-value">Monthly</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Volatility:</span>
+                            <span class="detail-value">Minimal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How UTP Works</h2>
+                <p class="section-subtitle">
+                    Simple, secure, and lightning-fast payment processing
+                </p>
+            </div>
+            
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Customer Chooses Token</h3>
+                        <p class="step-description">
+                            Customer selects their preferred payment token (Gold, Silver, Platinum, or BINR) 
+                            based on current market rates and personal preferences.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">UTP Gateway Processes</h3>
+                        <p class="step-description">
+                            Our system instantly converts the payment token to merchant's preferred settlement 
+                            currency using real-time market prices.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Instant Settlement</h3>
+                        <p class="step-description">
+                            Merchant receives instant settlement in their chosen format: INR via UPI, 
+                            BINR tokens, Gold tokens, or mixed settlement options.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Merchants Section -->
+    <section id="merchants" class="merchants">
+        <div class="container">
+            <div class="merchant-content">
+                <div class="merchant-info">
+                    <h2 class="section-title">Built for Merchants</h2>
+                    <p class="section-subtitle">
+                        Accept more payment options, reduce costs, and grow your business with asset-backed payments
+                    </p>
+                    
+                    <div class="merchant-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Accept 5+ different token types</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Instant settlements in INR or assets</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Zero chargeback risk</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Lower transaction fees (0.1-0.3%)</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Asset appreciation benefits</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Real-time analytics dashboard</span>
+                        </div>
+                    </div>
+                    
+                    <div class="merchant-actions">
+                        <button class="btn btn-primary" onclick="window.location.href='#get-started'">
+                            <i class="fas fa-store"></i>
+                            Start Accepting Payments
+                        </button>
+                        <button class="btn btn-outline" onclick="openMerchantDemo()">
+                            <i class="fas fa-play"></i>
+                            View Demo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="merchant-dashboard">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Merchant Dashboard</div>
+                            <div class="dashboard-status online">
+                                <i class="fas fa-circle"></i>
+                                Online
+                            </div>
+                        </div>
+                        
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">₹2,45,670</div>
+                                <div class="metric-label">Today's Revenue</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +12.5%
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">1,247</div>
+                                <div class="metric-label">Transactions</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +8.3%
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">₹197</div>
+                                <div class="metric-label">Avg. Order Value</div>
+                                <div class="metric-change neutral">
+                                    <i class="fas fa-minus"></i>
+                                    0%
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">99.7%</div>
+                                <div class="metric-label">Success Rate</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +0.2%
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recent-transactions">
+                            <div class="transaction-header">Recent Transactions</div>
+                            <div class="transaction-list">
+                                <div class="transaction-item">
+                                    <div class="transaction-token gold">
+                                        <i class="fas fa-coins"></i>
+                                    </div>
+                                    <div class="transaction-info">
+                                        <div class="transaction-amount">₹1,500</div>
+                                        <div class="transaction-details">BGT Payment • 0.265g</div>
+                                    </div>
+                                    <div class="transaction-status completed">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="transaction-item">
+                                    <div class="transaction-token stablecoin">
+                                        <i class="fas fa-rupee-sign"></i>
+                                    </div>
+                                    <div class="transaction-info">
+                                        <div class="transaction-amount">₹800</div>
+                                        <div class="transaction-details">BINR Payment • 800 BINR</div>
+                                    </div>
+                                    <div class="transaction-status completed">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="transaction-item">
+                                    <div class="transaction-token silver">
+                                        <i class="fas fa-coins"></i>
+                                    </div>
+                                    <div class="transaction-info">
+                                        <div class="transaction-amount">₹2,100</div>
+                                        <div class="transaction-details">BST Payment • 28.97g</div>
+                                    </div>
+                                    <div class="transaction-status pending">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Transparent Pricing</h2>
+                <p class="section-subtitle">
+                    No hidden fees, no setup costs, only pay for what you use
+                </p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Starter</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">0.3</span>
+                            <span class="period">%</span>
+                        </div>
+                        <div class="pricing-description">Per transaction</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Up to ₹1L monthly volume</li>
+                        <li><i class="fas fa-check"></i>All payment tokens supported</li>
+                        <li><i class="fas fa-check"></i>Instant INR settlements</li>
+                        <li><i class="fas fa-check"></i>Basic dashboard</li>
+                        <li><i class="fas fa-check"></i>Email support</li>
+                    </ul>
+                    
+                    <button class="btn btn-outline pricing-btn">Get Started</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Professional</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">0.2</span>
+                            <span class="period">%</span>
+                        </div>
+                        <div class="pricing-description">Per transaction</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Up to ₹10L monthly volume</li>
+                        <li><i class="fas fa-check"></i>All payment tokens supported</li>
+                        <li><i class="fas fa-check"></i>Mixed settlement options</li>
+                        <li><i class="fas fa-check"></i>Advanced analytics</li>
+                        <li><i class="fas fa-check"></i>Priority support</li>
+                        <li><i class="fas fa-check"></i>API access</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary pricing-btn">Start Free Trial</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₹</span>
+                            <span class="amount">0.1</span>
+                            <span class="period">%</span>
+                        </div>
+                        <div class="pricing-description">Per transaction</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i>Unlimited volume</li>
+                        <li><i class="fas fa-check"></i>Custom token support</li>
+                        <li><i class="fas fa-check"></i>White-label solution</li>
+                        <li><i class="fas fa-check"></i>Dedicated account manager</li>
+                        <li><i class="fas fa-check"></i>24/7 phone support</li>
+                        <li><i class="fas fa-check"></i>Custom integrations</li>
+                    </ul>
+                    
+                    <button class="btn btn-outline pricing-btn">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="get-started" class="get-started">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Payments?</h2>
+                <p class="cta-description">
+                    Join 50,000+ merchants already using UTP Gateway to accept asset-backed payments 
+                    and grow their businesses faster than ever before.
+                </p>
+                
+                <div class="cta-actions">
+                    <button class="btn btn-primary btn-large" onclick="startMerchantOnboarding()">
+                        <i class="fas fa-rocket"></i>
+                        Start Free Trial
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="scheduleDemo()">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Demo
+                    </button>
+                </div>
+                
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Bank-grade security</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 support</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-rocket"></i>
+                        <span>Quick setup in 5 minutes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-coins"></i>
+                        <span>UTP Gateway</span>
+                    </div>
+                    <p class="footer-description">
+                        India's first unified token payment gateway enabling asset-backed transactions 
+                        for the future of digital payments.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Payment Gateway</a></li>
+                        <li><a href="#">Settlement Engine</a></li>
+                        <li><a href="#">Analytics Dashboard</a></li>
+                        <li><a href="#">Developer API</a></li>
+                        <li><a href="#">Mobile SDK</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">E-commerce</a></li>
+                        <li><a href="#">SaaS Platforms</a></li>
+                        <li><a href="#">Marketplaces</a></li>
+                        <li><a href="#">Enterprise</a></li>
+                        <li><a href="#">Financial Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Integration Guide</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 UTP Gateway. All rights reserved. | Built with ❤️ by MiniMax Agent
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

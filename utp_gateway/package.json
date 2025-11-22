@@ -1,0 +1,82 @@
+{
+  "name": "utp-gateway",
+  "version": "1.0.0",
+  "description": "UTP Gateway - Unified Token Payments | India's First Metal-Backed Payment System",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "test": "node scripts/test-structure.js",
+    "test:watch": "jest tests/ --watch",
+    "lint": "eslint backend/ frontend/",
+    "lint:fix": "eslint backend/ frontend/ --fix",
+    "docs": "jsdoc -c jsdoc.config.json",
+    "deploy": "bash scripts/deploy.sh",
+    "setup": "bash scripts/setup.sh",
+    "health": "curl http://localhost:3002/health",
+    "status": "curl http://localhost:3002/status",
+    "validate": "node scripts/test-structure.js",
+    "build": "npm run test && echo '✅ Build validation complete!'"
+  },
+  "keywords": [
+    "payment-gateway",
+    "token-payments",
+    "crypto",
+    "gold-tokens",
+    "silver-tokens", 
+    "platinum-tokens",
+    "binr-stablecoin",
+    "rwa-tokenization",
+    "blockchain",
+    "hyperledger",
+    "express",
+    "nodejs",
+    "payment-processing",
+    "fintech",
+    "india-payments",
+    "upi-3.0"
+  ],
+  "author": "MiniMax Agent",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.10.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.0",
+    "fabric-network": "^2.2.18",
+    "fabric-ca-client": "^2.2.18",
+    "axios": "^1.5.0",
+    "ws": "^8.14.2",
+    "express-validator": "^7.0.1",
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "eslint": "^8.52.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jsdoc": "^4.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minimax/utp-gateway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/minimax/utp-gateway/issues"
+  },
+  "homepage": "https://github.com/minimax/utp-gateway#readme"
+}
